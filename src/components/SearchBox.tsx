@@ -139,8 +139,7 @@ const SearchBox = () => {
           Search Person By Name
         </h1>
 
-        <div className="flex justify-center items-center w-[40rem] h-fit gap-2 flex-wrap border-2 border-indigo-400 rounded-lg p-2">
-          {/* Selected users showing  */}
+        <div className="flex justify-center  items-center md:w-[40rem] h-fit gap-2 flex-wrap border-2 border-indigo-400 rounded-lg p-2">
           {selectedChip?.map((item) => (
             <div
               key={item?.id}
@@ -179,7 +178,7 @@ const SearchBox = () => {
         {showUsers && (
           <div
             ref={modalRef}
-            className={`w-[40rem] max-h-[20rem] min-h-fit overflow-y-auto duration-300 ease-out transition-all rounded-lg p-2 flex flex-col justify-center items-center gap-2  text-center`}
+            className={`md:w-[40rem] rounded-lg p-2 flex flex-col justify-center items-center gap-2  text-center`}
           >
             {filteredItems?.filter(
               (curId) =>
@@ -196,14 +195,14 @@ const SearchBox = () => {
                   <div
                     key={item?.id}
                     onClick={() => handleItemToggle(item)}
-                    className="flex items-center  gap-5 cursor-pointer hover:bg-gray-300 rounded-lg duration-200 px-3 py-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] w-3/4"
+                    className="flex items-center  gap-5 cursor-pointer hover:bg-gray-300 rounded-lg duration-200 px-3 py-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] w-full md:w-3/4"
                   >
                     <img
                       src={item?.imageUrl}
                       className="w-14 h-14 rounded-full object-center"
                       alt="Person-Image-Error"
                     />
-                    <div className="flex gap-3">
+                    <div className="flex flex-col md:flex-row md:gap-3 gap-1">
                       <p className="text-black">{item?.personName}</p>
                       <p className="text-black">{item?.emailId}</p>
                     </div>
